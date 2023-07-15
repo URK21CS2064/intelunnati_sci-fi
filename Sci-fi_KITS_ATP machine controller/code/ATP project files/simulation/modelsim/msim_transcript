@@ -1,0 +1,52 @@
+# Reading pref.tcl
+# do ATP_Machine_Electricity_Bill_Payment_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/ebina/Documents/Unnatti\ Internship {C:/Users/ebina/Documents/Unnatti Internship/ATP_Machine_Electricity_Bill_Payment.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:25:43 on Jul 15,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/ebina/Documents/Unnatti Internship" C:/Users/ebina/Documents/Unnatti Internship/ATP_Machine_Electricity_Bill_Payment.v 
+# -- Compiling module ATP_Machine_Electricity_Bill_Payment
+# 
+# Top level modules:
+# 	ATP_Machine_Electricity_Bill_Payment
+# End time: 19:25:43 on Jul 15,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/ebina/Documents/Unnatti\ Internship {C:/Users/ebina/Documents/Unnatti Internship/ATP_Machine_Electricity_Bill_Payment_tb.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:25:43 on Jul 15,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/ebina/Documents/Unnatti Internship" C:/Users/ebina/Documents/Unnatti Internship/ATP_Machine_Electricity_Bill_Payment_tb.v 
+# -- Compiling module ATP_Machine_Electricity_Bill_Payment_tb
+# 
+# Top level modules:
+# 	ATP_Machine_Electricity_Bill_Payment_tb
+# End time: 19:25:43 on Jul 15,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  ATP_Machine_Electricity_Bill_Payment_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" ATP_Machine_Electricity_Bill_Payment_tb 
+# Start time: 19:25:43 on Jul 15,2023
+# Loading work.ATP_Machine_Electricity_Bill_Payment_tb
+# Loading work.ATP_Machine_Electricity_Bill_Payment
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# ** Note: $finish    : C:/Users/ebina/Documents/Unnatti Internship/ATP_Machine_Electricity_Bill_Payment_tb.v(88)
+#    Time: 345 ps  Iteration: 0  Instance: /ATP_Machine_Electricity_Bill_Payment_tb
+# 1
+# Break in Module ATP_Machine_Electricity_Bill_Payment_tb at C:/Users/ebina/Documents/Unnatti Internship/ATP_Machine_Electricity_Bill_Payment_tb.v line 88
+# End time: 20:08:54 on Jul 15,2023, Elapsed time: 0:43:11
+# Errors: 0, Warnings: 0

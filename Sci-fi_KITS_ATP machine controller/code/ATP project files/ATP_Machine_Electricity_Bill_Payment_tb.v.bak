@@ -1,0 +1,90 @@
+module ATP_Machine_Electricity_Bill_Payment_TB;
+    // Inputs
+    reg clk;
+    reg reset;
+    reg card_inserted;
+    reg [7:0] card_data;
+    reg [3:0] pin;
+    reg payment_1000;
+    reg payment_500;
+    reg payment_100;
+    reg payment_50;
+    
+    // Outputs
+    wire [7:0] display;
+    wire payment_success;
+    wire payment_fail;
+    wire payment_timeout;
+
+    // Instantiate the ATP Machine module
+    ATP_Machine_Electricity_Bill_Payment ATP_Machine (
+        .clk(clk),
+        .reset(reset),
+        .card_inserted(card_inserted),
+        .card_data(card_data),
+        .pin(pin),
+        .payment_1000(payment_1000),
+        .payment_500(payment_500),
+        .payment_100(payment_100),
+        .payment_50(payment_50),
+        .display(display),
+        .payment_success(payment_success),
+        .payment_fail(payment_fail),
+        .payment_timeout(payment_timeout)
+    );
+
+    // Clock generation
+    always begin
+        #5 clk = ~clk;
+    end
+
+    // Initialize inputs
+    initial begin
+        clk = 0;
+        reset = 1;
+        card_inserted = 0;
+        card_data = 0;
+        pin = 0;
+        payment_1000 = 0;
+        payment_500 = 0;
+        payment_100 = 0;
+        payment_50 = 0;
+
+        #10 reset = 0; // Deassert reset after 10 time units
+
+        // Scenario 1: Successful payment
+        #20 card_inserted = 1;
+        #5 card_data = 8'hAB;
+        #5 card_inserted = 0;
+        #10 pin = 4'b1010; // Correct PIN
+        #5 payment_1000 = 1; // Rs 1000 payment
+        #5 payment_500 = 1; // Rs 500 payment
+        #5 payment_100 = 1; // Rs 100 payment
+        #5 payment_50 = 1; // Rs 50 payment
+        #50;
+        #5; // Add any additional waiting time for observation
+
+        // Scenario 2: Failed payment
+        #20 card_inserted = 1;
+        #5 card_data = 8'hCD;
+        #5 card_inserted = 0;
+        #10 pin = 4'b0101; // Incorrect PIN
+        #5 payment_1000 = 1; // Rs 1000 payment
+        #5 payment_500 = 1; // Rs 500 payment
+        #5 payment_100 = 1; // Rs 100 payment
+        #5 payment_50 = 1; // Rs 50 payment
+        #50;
+        #5; // Add any additional waiting time for observation
+
+        // Scenario 3: Timeout
+        #20 card_inserted = 1;
+        #5 card_data = 8'hEF;
+        #5 card_inserted = 0;
+        #10 pin = 4'b1011; // Correct PIN
+        #50; // Wait for timeout
+        #5; // Add any additional waiting time for observation
+
+        // End simulation
+        #10 $finish;
+    end
+endmodule

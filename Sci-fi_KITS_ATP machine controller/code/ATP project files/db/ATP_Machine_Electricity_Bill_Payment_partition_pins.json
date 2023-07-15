@@ -1,0 +1,109 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "display[0]",
+					"strict" : false
+				},
+				{
+					"name" : "display[1]",
+					"strict" : false
+				},
+				{
+					"name" : "display[2]",
+					"strict" : false
+				},
+				{
+					"name" : "display[3]",
+					"strict" : false
+				},
+				{
+					"name" : "display[4]",
+					"strict" : false
+				},
+				{
+					"name" : "display[5]",
+					"strict" : false
+				},
+				{
+					"name" : "display[6]",
+					"strict" : false
+				},
+				{
+					"name" : "display[7]",
+					"strict" : false
+				},
+				{
+					"name" : "payment_success",
+					"strict" : false
+				},
+				{
+					"name" : "payment_fail",
+					"strict" : false
+				},
+				{
+					"name" : "card_data[0]",
+					"strict" : false
+				},
+				{
+					"name" : "card_data[1]",
+					"strict" : false
+				},
+				{
+					"name" : "card_data[2]",
+					"strict" : false
+				},
+				{
+					"name" : "card_data[3]",
+					"strict" : false
+				},
+				{
+					"name" : "card_data[4]",
+					"strict" : false
+				},
+				{
+					"name" : "card_data[5]",
+					"strict" : false
+				},
+				{
+					"name" : "card_data[6]",
+					"strict" : false
+				},
+				{
+					"name" : "card_data[7]",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "card_inserted",
+					"strict" : false
+				},
+				{
+					"name" : "payment_1000",
+					"strict" : false
+				},
+				{
+					"name" : "payment_500",
+					"strict" : false
+				},
+				{
+					"name" : "payment_100",
+					"strict" : false
+				},
+				{
+					"name" : "payment_50",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
